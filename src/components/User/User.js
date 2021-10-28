@@ -1,9 +1,12 @@
+import { Link } from 'react-router-dom';
 const styles = {
 	container: {
 		height: 20,
 		display: 'flex',
 		alignItems: 'center',
-		padding: 8
+		padding: 8,
+		textDecoration: 'none',
+		color: 'black'
 	},
 	odd: {
 		background: '#e2e2e2'
@@ -21,9 +24,15 @@ const getStyleById = (id) => {
 };
 const User = ({ user, id }) => {
 	return (
-		<div style={getStyleById(id)}>
+		<Link
+			style={getStyleById(id)}
+			to={{
+				pathname: `/user-profile/${user.id}`,
+				state: { user: user }
+			}}
+		>
 			{user.first_name} {user.last_name}
-		</div>
+		</Link>
 	);
 };
 

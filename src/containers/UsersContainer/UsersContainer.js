@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { UserList, Loading } from '../../components';
 
 const styles = {
 	container: {
 		width: '50vw',
 		minWidth: 300,
-		maxWidth: 500,
-		height: 500
+		maxWidth: 500
 	}
 };
 
@@ -25,8 +25,9 @@ const UsersContainer = () => {
 
 	return (
 		<div style={styles.container}>
-			{loading && <p>Loading</p>}
 			<UserList users={users} />
+			<br />
+			<Link to="/user-profile/1">User link by ID: 1</Link>
 		</div>
 	);
 };
