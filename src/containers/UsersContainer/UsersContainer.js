@@ -3,8 +3,10 @@ import { UserList, Loading } from '../../components';
 
 const styles = {
 	container: {
-		width: '30vw',
-		minWidth: 250
+		width: '50vw',
+		minWidth: 300,
+		maxWidth: 500,
+		height: 500
 	}
 };
 
@@ -18,7 +20,8 @@ const UsersContainer = () => {
 		});
 	}, []);
 
-	if (loading) return <Loading />; //Loader shows after 1s delay to avoid loader blink effect
+	//Loader shows after 1s delay to avoid loader blink effect
+	if (loading) return <Loading />;
 
 	return (
 		<div style={styles.container}>

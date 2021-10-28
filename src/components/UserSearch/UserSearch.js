@@ -3,7 +3,8 @@ import { useRef } from 'react';
 const styles = {
 	container: {
 		width: '100%',
-		maxWidth: 700
+		height: 30,
+		marginBottom: 16
 	},
 	button: {
 		width: 30,
@@ -11,11 +12,11 @@ const styles = {
 		float: 'left',
 		position: 'relative',
 		top: -33,
-		left: 'calc(100% - 25px)',
+		left: 'calc(100% - 33px)',
 		background: 'white',
 		border: 'unset'
 	},
-	input: { width: '100%', height: 30, borderRadius: 6, padding: '1px 3px' }
+	input: { border: '1px solid $4f60ff', width: 'calc(100% -  8px)', height: 30, borderRadius: 6, padding: '1px 3px' }
 };
 
 const UserSearch = ({ onSearch }) => {
@@ -34,13 +35,7 @@ const UserSearch = ({ onSearch }) => {
 	};
 	return (
 		<div style={styles.container}>
-			<input
-				style={styles.input}
-				ref={searchFieldRef}
-				onKeyDown={keyPressHandle}
-				type='text'
-				placeholder='Search users'
-			/>
+			<input style={styles.input} ref={searchFieldRef} onKeyDown={keyPressHandle} type="text" placeholder="Search users" />
 			<button style={styles.button} onClick={handlePhraseClear}>
 				x
 			</button>
