@@ -1,5 +1,9 @@
-const User = () => {
-	return <div>This is user component</div>;
+const User = ({ user }) => {
+	return (
+		<div>
+			{user.first_name} {user.last_name}
+		</div>
+	);
 };
 
 export default User;
