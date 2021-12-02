@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { UserList, Loading } from '../../components';
+import fetchUsers from '../../utils/fetchUsers';
 
 const styles = {
 	container: {
@@ -14,7 +15,7 @@ const UsersContainer = () => {
 	const [ users, setUsers ] = useState([]);
 	const [ loading, setLoading ] = useState(true);
 	useEffect(() => {
-		fetch('./users.json').then((res) => res.json()).then((data) => {
+		fetchUsers().then((data) => {
 			setUsers(data);
 			setLoading(false);
 		});
