@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { UserList, Loading } from '../../components';
-import fetchUsers from '../../utils/fetchUsers';
+import fetchUsers from '../../services/fetchUsers';
 
 const styles = {
 	container: {
